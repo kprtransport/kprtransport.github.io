@@ -1,60 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>KPR Transport</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
         }
 
         header {
-            background: #0f172a;
+            background: linear-gradient(to right, #0f172a, #1e293b);
             color: white;
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         header img {
-            width: 250px;
+            width: 220px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        p {
+            margin-top: 10px;
+            font-weight: 300;
         }
 
         section {
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
+            animation: fadeUp 1s ease forwards;
         }
 
         .services {
-            background: #f4f4f4;
+            background: #ffffff;
         }
 
         .partners {
-            background: white;
+            background: #f1f5f9;
         }
 
         h2 {
-            margin-bottom: 20px;
-            color: #0f172a;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+
+        .service-list p,
+        .partner-list p {
+            margin: 10px 0;
         }
 
         footer {
             background: #0f172a;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 25px;
+            font-size: 0.9rem;
         }
 
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: #dc2626;
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
             color: white;
+            padding: 15px 18px;
+            border-radius: 50px;
+            font-size: 14px;
             text-decoration: none;
-            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
         }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {transform: scale(1);}
+            50% {transform: scale(1.05);}
+            100% {transform: scale(1);}
+        }
+
+        /* Mobile Optimization */
+        @media(max-width: 768px) {
+            header {
+                padding: 60px 15px;
+            }
+
+            header img {
+                width: 180px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .whatsapp-btn {
+                padding: 12px 15px;
+                font-size: 12px;
+            }
+        }
+
     </style>
 </head>
 
@@ -76,23 +161,25 @@
 
 <section class="services">
     <h2>Our Services</h2>
-    <p>Goods Transportation</p>
-    <p>Construction Material Transport</p>
-    <p>Bulk Commercial Deliveries</p>
-    <p>Interstate Transport Services</p>
+    <div class="service-list">
+        <p>✔ Goods Transportation</p>
+        <p>✔ Construction Material Transport</p>
+        <p>✔ Bulk Commercial Deliveries</p>
+        <p>✔ Interstate Transport Services</p>
+    </div>
 </section>
 
 <section class="partners">
     <h2>Trusted Partners & Clients</h2>
-    <p><strong>Main Partners:</strong></p>
-    <p>KPR Crop Sciences Pvt. Ltd.</p>
-    <p>KPR Agro Chem Pvt. Ltd.</p>
-
-    <br>
-
-    <p><strong>Regular Clients:</strong></p>
-    <p>Associated Road Carriers Ltd.</p>
-    <p>Total Group (Surat Goods)</p>
+    <div class="partner-list">
+        <p><strong>Main Partners:</strong></p>
+        <p>KPR Crop Sciences Pvt. Ltd.</p>
+        <p>KPR Agro Chem Pvt. Ltd.</p>
+        <br>
+        <p><strong>Regular Clients:</strong></p>
+        <p>Associated Road Carriers Ltd.</p>
+        <p>Total Group (Surat Goods)</p>
+    </div>
 </section>
 
 <section>
@@ -100,6 +187,10 @@
     <p>Email: kprtransport@zohomail.in</p>
     <p>Phone: +91 9640612805</p>
 </section>
+
+<a class="whatsapp-btn" href="https://wa.me/919640612805" target="_blank">
+    Chat on WhatsApp
+</a>
 
 <footer>
     © 2026 KPR Transport. All Rights Reserved.
